@@ -1,7 +1,7 @@
 import telebot
 from keyboard import markup
 
-bot = telebot.TeleBot("8481708525:AAEjJX4kcY8YQh5kpDJtvu4NFUEehIri684")
+bot = telebot.TeleBot("")
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -26,5 +26,6 @@ def callback_schedule(call):
 def callback_schedule(call):
     bot.answer_callback_query(call.id)
     bot.send_message(call.message.chat.id, "ℹ️ О нашей школе!")
+
 
 bot.polling()
