@@ -1,6 +1,10 @@
+import telebot
 from keyboard import markup
 from config import bot
 from logic import get_schedule
+
+
+bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -35,6 +39,7 @@ def callback_schedule(call):
 def callback_teachers(call):
     bot.answer_callback_query(call.id)
     bot.send_message(call.message.chat.id,"Вот ссылка на таблицу https://docs.google.com/spreadsheets/d/1OLZY0EnwS59UpVyjVvsOhnEllgaGHH1mQALu4gkOdu4/edit?usp=sharing")
+
 
 
 
